@@ -1,6 +1,6 @@
 # hacking_CLI
 the hacking menu to help beginners learn and understand hacking 
-
+the GUI version of this is located at: https://github.com/mynameisORIG/hacking_GUI
 <h2> John The Ripper </h2>
 All you do is enter the hash file location, enter the decyption method, and it executes. The decyption methods available are md5, DES, MySQL, sha1, sha-224, sha-256, sha-384, and sha-512.
 <h2> goBuster </h2>
