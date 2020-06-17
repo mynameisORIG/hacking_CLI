@@ -1,7 +1,26 @@
 #!/bin/bash
 
+echo "Checking packages ..."; echo ""
+if [ -x "$(command -v yum)" ]; then
+    if rpm -qa | grep -q john && rpm -qa | grep -q gobuster && rpm -qa | grep -q nmap ;then
+        :
+    else
+        sudo yum -y install john gobuster nmap
+    fi
+elif [ -x "$(command -v apt-get)" ]; then
+    if dpkg -l | grep -q john && dpkg -l | grep -q gobuster && dpkg -l | grep -q nmap; then
+        :
+    else
+        sudo apt-get -y install john gobuster nmap
+    fi
+else
+    :
+fi
+
+
 PS3='Please enter your choice: '
 options=("John The Ripper" "goBuster" "smbmap" "Use Python for Bash" "nmap" "Quit")
+
 select hack in "${options[@]}"
 do
     case $hack in
